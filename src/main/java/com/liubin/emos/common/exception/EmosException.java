@@ -1,8 +1,11 @@
-package com.liubin.emos.exception;
+package com.liubin.emos.common.exception;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+/**
+ * @author 自定义异常
+ */
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class EmosException extends RuntimeException {

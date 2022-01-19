@@ -67,8 +67,11 @@ logging:
 
 emos:
   jwt:
+    # 密钥
     secret: abc123456
+    # 过期时间
     expire: 5
+    # 令牌缓存时间（天数）
     cache-expire: 10
   face:
     createFaceModelUrl: http://运行人脸识别程序的主机IP:3000/create_face_model
