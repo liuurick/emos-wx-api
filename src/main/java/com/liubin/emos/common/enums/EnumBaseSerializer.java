@@ -9,7 +9,7 @@ import java.lang.reflect.Type;
 
 
 /**
- * @author admin
+ * @author liubin
  */
 public class EnumBaseSerializer implements ObjectSerializer {
 

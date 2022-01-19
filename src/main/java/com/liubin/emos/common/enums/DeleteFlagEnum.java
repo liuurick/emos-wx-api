@@ -4,7 +4,7 @@ package com.liubin.emos.common.enums;
 import com.alibaba.fastjson.annotation.JSONType;
 
 /**
- * @author admin
+ * @author liubin
  */
 @JSONType(serializer = EnumBaseSerializer.class)
 public enum DeleteFlagEnum {

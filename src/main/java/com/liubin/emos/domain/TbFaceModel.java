@@ -11,6 +11,7 @@ import java.io.Serializable;
  */
 @Data
 public class TbFaceModel implements Serializable {
+
     /**
      * 主键值
      */

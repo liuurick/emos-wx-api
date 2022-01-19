@@ -10,6 +10,7 @@ import java.io.Serializable;
 @Data
 @Document(collection = "message_ref")
 public class MessageRefEntity implements Serializable {
+
     @Id
     private String _id;
 

@@ -4,12 +4,13 @@ import java.lang.annotation.*;
 
 
 /**
- * @author admin
+ * @author liubin
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface WebLog {
+
     /**
      * 日志描述信息
      *

@@ -3,7 +3,7 @@ package com.liubin.emos.common.annotation;
 import java.lang.annotation.*;
 
 /**
- * @author cyh
+ * @author liubin
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

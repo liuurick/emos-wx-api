@@ -1,7 +1,7 @@
 package com.liubin.emos.common.aop;
 
-import com.distribution.management.system.common.annotation.WebLog;
 import com.google.gson.Gson;
+import com.liubin.emos.common.annotation.WebLog;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -17,11 +17,11 @@ import java.lang.reflect.Method;
 
 
 /**
- * @author admin
+ * @author liubin
  */
 @Aspect
 @Component
-@Profile({"dev", "test", "local"})
+//@Profile({"dev", "test", "local"})
 public class WebLogAspect {
 
     private final static Logger logger = LoggerFactory.getLogger(WebLogAspect.class);
@@ -33,7 +33,7 @@ public class WebLogAspect {
     /**
      * 以自定义 @WebLog 注解为切点
      */
-    @Pointcut("@annotation(com.distribution.management.system.common.annotation.WebLog)")
+    @Pointcut("@annotation(com.liubin.emos.common.annotation.WebLog)")
     public void logPoint() {
     }
 

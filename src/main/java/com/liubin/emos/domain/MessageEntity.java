@@ -11,6 +11,7 @@ import java.util.Date;
 @Data
 @Document(collection = "message")
 public class MessageEntity implements Serializable {
+
     @Id
     private String _id;
 

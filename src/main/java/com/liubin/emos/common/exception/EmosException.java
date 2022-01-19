@@ -4,7 +4,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * @author 自定义异常
+ * 自定义异常
+ * @author liubin
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

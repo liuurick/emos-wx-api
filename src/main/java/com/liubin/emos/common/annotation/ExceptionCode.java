@@ -6,14 +6,19 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author admin
+ * @author liubin
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD})
 public @interface ExceptionCode {
-    // 响应码code
+
+    /**
+     * 响应码code
+     */
     int value() default 100000;
 
-    // 响应信息msg
+    /**
+     * 响应信息msg
+     */
     String message() default "参数校验错误";
 }

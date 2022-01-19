@@ -11,6 +11,7 @@ import java.io.Serializable;
  */
 @Data
 public class TbDept implements Serializable {
+
     /**
      * 主键
      */

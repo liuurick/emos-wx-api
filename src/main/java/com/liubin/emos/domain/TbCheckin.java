@@ -12,6 +12,7 @@ import java.util.Date;
  */
 @Data
 public class TbCheckin implements Serializable {
+
     /**
      * 主键
      */

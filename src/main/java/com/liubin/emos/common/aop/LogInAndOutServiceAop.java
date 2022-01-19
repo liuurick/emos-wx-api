@@ -13,16 +13,17 @@ import java.lang.reflect.Method;
 
 
 /**
- * @author admin
+ * @author liubin
  */
 @Component
 @Aspect
 @Slf4j
 public class LogInAndOutServiceAop {
+
     /***
      * 注解端点拦截
      */
-    @Pointcut("@annotation(com.distribution.management.system.common.annotation.ServerLog)")
+    @Pointcut("@annotation(com.liubin.emos.common.annotation.ServerLog)")
     public void logPoint() {
     }
 
