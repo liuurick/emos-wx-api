@@ -1,22 +1,25 @@
 package com.liubin.emos.config.shiro;
 
 import com.liubin.emos.config.jwt.JwtUtil;
+import com.liubin.emos.domain.TbUser;
+import com.liubin.emos.service.UserService;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.Set;
 
 @Component
 public class OAuth2Realm extends AuthorizingRealm {
-
-    @Autowired
+    @Resource
     private JwtUtil jwtUtil;
 
+    @Resource
+    private UserService userService;
 
     @Override
     public boolean supports(AuthenticationToken token) {
@@ -24,25 +27,34 @@ public class OAuth2Realm extends AuthorizingRealm {
     }
 
     /**
-     * 授权(验证权限时调用)
-     */
-    @Override
-    protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-
-        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
-        //TODO 查询用户的权限列表
-        //TODO 把权限列表添加到info对象中
-        return info;
-    }
-
-    /**
-     * 认证(登录时调用)
+     * 认证(验证登录时调用)
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-        //TODO 从令牌中获取userId，然后检测该账户是否被冻结。
-        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo();
-        //TODO 往info对象中添加用户信息、Token字符串
-        return info;
+        String accessToken = (String) token.getPrincipal();
+        int userId = jwtUtil.getUserId(accessToken);
+//        TbUser user = userService.searchById(userId);
+//
+//        if (user == null) {
+//            throw new LockedAccountException("账号已被锁定,请联系管理员");
+//        }
+//        return new SimpleAuthenticationInfo(user, accessToken, getName());
+        return null;
     }
+
+    /**
+     * 授权(验证权限时调用)
+     */
+    @Override
+    protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection collection) {
+        TbUser user = (TbUser) collection.getPrimaryPrincipal();
+//        int userId = user.getId();
+//        Set<String> permsSet = userService.searchUserPermissions(userId);
+//        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+//        info.setStringPermissions(permsSet);
+//        return info;
+        return null;
+    }
+
+
 }
