@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.emos.wx.db.dao.TbDeptDao">
+<mapper namespace="com.liubin.emos.dao.TbDeptDao">
     <select id="searchDeptMembers" parameterType="String" resultType="HashMap">
         SELECT
         d.id,
@@ -12,7 +12,7 @@
         </if>
         GROUP BY d.id
     </select>
-    <select id="searchAllDept" resultType="com.example.emos.wx.db.pojo.TbDept">
+    <select id="searchAllDept" resultType="com.liubin.emos.domain.TbDept">
         SELECT id,
         dept_name
         FROM tb_dept
@@ -27,7 +27,7 @@
         FROM tb_dept
         WHERE id = #{id}
     </delete>
-    <update id="updateDeptById" parameterType="com.example.emos.wx.db.pojo.TbDept">
+    <update id="updateDeptById" parameterType="com.liubin.emos.domain.TbDept">
         UPDATE tb_dept
         SET dept_name=#{deptName}
         WHERE id = #{id}

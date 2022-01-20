@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.emos.wx.db.dao.TbUserDao">
+<mapper namespace="com.liubin.emos.dao.TbUserDao">
     <select id="haveRootUser" resultType="boolean">
         SELECT IF(COUNT(*),TRUE,FALSE) FROM tb_user WHERE root=1;
     </select>
@@ -14,7 +14,7 @@
         JOIN tb_permission p ON JSON_CONTAINS(r.permissions, CAST(p.id AS CHAR))
         WHERE u.id=#{userId} AND u.status=1;
     </select>
-    <select id="searchById" parameterType="int" resultType="com.example.emos.wx.db.pojo.TbUser">
+    <select id="searchById" parameterType="int" resultType="com.liubin.emos.domain.TbUser">
         SELECT
         id, open_id, nickname, photo, name, sex, tel, role, root, dept_id, status, create_time
         FROM tb_user WHERE id=#{userId} AND status=1

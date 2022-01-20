@@ -45,7 +45,7 @@
         AND date BETWEEN #{startDate}
         AND #{endDate}
     </select>
-    <insert id="insert" parameterType="com.example.emos.wx.db.pojo.TbCheckin">
+    <insert id="insert" parameterType="com.liubin.emos.domain.TbCheckin">
         INSERT INTO tb_checkin
         SET user_id=#{userId},
         <if test="address!=null">

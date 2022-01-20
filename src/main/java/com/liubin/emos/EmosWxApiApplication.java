@@ -11,9 +11,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 @SpringBootApplication
-@ServletComponentScan
 @Slf4j
-@EnableAsync
 public class EmosWxApiApplication {
 
     public static void main(String[] args) throws UnknownHostException {

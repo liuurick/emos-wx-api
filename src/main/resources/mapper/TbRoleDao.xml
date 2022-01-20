@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.emos.wx.db.dao.TbRoleDao">
-    <select id="searchAllRole" resultType="com.example.emos.wx.db.pojo.TbRole">
+<mapper namespace="com.liubin.emos.dao.TbRoleDao">
+    <select id="searchAllRole" resultType="com.liubin.emos.domain.TbRole">
         SELECT id, role_name, systemic FROM tb_role ORDER BY id;
     </select>
     <select id="searchRoleUsersCount" parameterType="int" resultType="long">
@@ -37,12 +37,12 @@
         JOIN tb_action a ON p.action_id=a.id
         ORDER BY p.module_id,p.id
     </select>
-    <insert id="insertRole" parameterType="com.example.emos.wx.db.pojo.TbRole">
+    <insert id="insertRole" parameterType="com.liubin.emos.domain.TbRole">
         INSERT INTO tb_role
         SET role_name=#{roleName},
         permissions=#{permissions}
     </insert>
-    <update id="updateRolePermissions" parameterType="com.example.emos.wx.db.pojo.TbRole">
+    <update id="updateRolePermissions" parameterType="com.liubin.emos.domain.TbRole">
         UPDATE tb_role
         SET permissions=#{permissions}
         WHERE id=#{id}
