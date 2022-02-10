@@ -11,6 +11,9 @@ import java.io.Serializable;
  */
 @Data
 public class TbModule implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     /**
      * 主键
      */
@@ -36,5 +39,4 @@ public class TbModule implements Serializable {
      */
     private String remark;
 
-    private static final long serialVersionUID = 1L;
 }

@@ -11,6 +11,7 @@ import java.io.Serializable;
  */
 @Data
 public class TbDept implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     /**
      * 主键
@@ -22,5 +23,4 @@ public class TbDept implements Serializable {
      */
     private String deptName;
 
-    private static final long serialVersionUID = 1L;
 }

@@ -12,6 +12,9 @@ import java.util.Date;
  */
 @Data
 public class TbMeeting implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     /**
      * 主键
      */
@@ -86,5 +89,4 @@ public class TbMeeting implements Serializable {
      */
     private Date createTime;
 
-    private static final long serialVersionUID = 1L;
 }

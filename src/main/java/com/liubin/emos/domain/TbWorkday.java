@@ -12,6 +12,9 @@ import java.util.Date;
  */
 @Data
 public class TbWorkday implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     /**
      * 主键
      */
@@ -22,5 +25,4 @@ public class TbWorkday implements Serializable {
      */
     private Date date;
 
-    private static final long serialVersionUID = 1L;
 }

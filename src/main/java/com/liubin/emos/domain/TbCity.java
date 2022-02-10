@@ -11,6 +11,7 @@ import java.io.Serializable;
  */
 @Data
 public class TbCity implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     /**
      * 主键
@@ -27,5 +28,4 @@ public class TbCity implements Serializable {
      */
     private String code;
 
-    private static final long serialVersionUID = 1L;
 }

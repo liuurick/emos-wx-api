@@ -11,6 +11,7 @@ import java.io.Serializable;
  */
 @Data
 public class TbFaceModel implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     /**
      * 主键值
@@ -27,5 +28,4 @@ public class TbFaceModel implements Serializable {
      */
     private String faceModel;
 
-    private static final long serialVersionUID = 1L;
 }

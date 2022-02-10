@@ -12,6 +12,7 @@ import java.util.Date;
  */
 @Data
 public class TbCheckin implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     /**
      * 主键
@@ -68,5 +69,4 @@ public class TbCheckin implements Serializable {
      */
     private Date createTime;
 
-    private static final long serialVersionUID = 1L;
 }
